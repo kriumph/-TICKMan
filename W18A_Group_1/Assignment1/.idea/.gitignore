@@ -1,0 +1,12 @@
+# Default ignored files
+<<<<<<< HEAD
+/workspace.xml
+=======
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../:\Desktop\SOFT2412\W18A_Group_1\Assignment1\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+>>>>>>> 178f087d2076b0cd371650458ededefc26bb119d
