@@ -3,18 +3,36 @@
  */
 package Currency;
 
+import Currency.Logic.Admin;
+import Currency.Logic.CurrencyConverter;
+import Currency.Logic.User;
+import Currency.UI.Controller;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
+import javafx.stage.Stage;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 
-public class App {
+public class App extends Application{
 
-    private static String filepath = "src/main/java/Currency/RateTxt.txt";;
+    private static String filepath = "src/main/java/Currency/Logic/RateTxt.txt";;
 
     public static void main(String[] args)
     {
+
+        try {
+            Application.launch(args);
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
         // TODO: open the in-memory file containing ER and and pass it into constructor of CC
 
 
@@ -85,5 +103,15 @@ public class App {
                     }
             }
         }
+    }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root;
+        root = FXMLLoader.load(getClass().getClassLoader().getResource("Main.fxml"));
+
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Currency Converter");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }

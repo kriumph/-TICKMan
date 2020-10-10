@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>index</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><p><span> </span></p><p><span> </span></p><p><span> </span><img src="https://www.labarchives.com/wp-content/uploads/2017/03/university_sydney.png" referrerpolicy="no-referrer"></p><p><span> </span></p><p><span>Agile Software Development Practices (SOFT2412/COMP9412)</span></p><p><span>School of Computer Science</span></p><h3><a name="group-project-assignment-1----tools-for-agile-software-development" class="md-header-anchor"></a><span>Group Project Assignment 1 – Tools for Agile Software Development</span></h3><p><span> </span></p><p><strong><span>Background</span></strong></p><p><span>Agile software development is centered around teams and teamwork. In Agile team environments, a set of practices and principles should be followed to guide teams through the development process to build quality software products efficiently and effectively. Implementing Agile practices and principles in a software development project require developing skills that fall in two main areas namely, technical tooling, and social interactions. In this unit, you are required to work in Agile software development teams to experience and develop both technical and social skills.</span></p><p><span>The goal of the first group project assignment is to work as a team and to use and apply Agile software development tools in the context of a software development project.</span></p><p><span> </span></p><p><strong><span>Main Requirements</span></strong></p><p><span>In this group project, teams of 5-6 students (</span><em><span>must be enrolled in the same tutorial/lab</span></em><span>) will be required to build </span><strong><span>a currency converter software application in Java</span></strong><span>. All teams are required to use this software project as the starting point of their work. As a team, you will be required to develop specific features/functionalities of the currency converter application.</span></p><p><span>Following Agile practices, each team is required to work collaboratively and carry out software development activities to build a currency converter application. During the development, each team is required to use the set of software tools covered in this course following Agile development practices. Below are more details of the project requirements and deliverables for the assignment.</span></p><p><span> </span></p><p><strong><span>Part 1 - Agile Tools Setup</span></strong></p><p><span>Each group must collaboratively work to setup a set of software tools that will help them to prepare to prepare agile development environment. All these tools have been/will be introduced the weekly labs including GitHub, Gradle, JUnit (including code coverage) and Jenkins. In your tool setup, you will need to meet the following requirements:</span></p><ol><li><span>There must be a single shared GitHub repository in the supplied </span><a href='https://github.sydney.edu.au/SOFT2412-2020S2'><span>GitHub organization.Links to an external site.</span></a><span> for the entire group. Every member must contribute to this repository.</span></li><li><span>Gradle must be used for build automation, and JUnit for automated testing. JUnit must be integrated with Gradle and a code coverage tool. For JUnit testing, code coverage must be at least 75%.</span></li><li><span>Continuous integration should be done with Jenkins, which must be hooked with GitHub. Both Gradle and JUnit must be integrated on Jenkins and run automatically for </span><strong><span>every new commit</span></strong><span> in a particular GitHub branch after Jenkins has been setup correctly.</span></li><li><span>Jenkins must be integrated with GitHub via webhooks. Also, ngrok can be used for continuous integration with Jenkins. Jenkins may be hosted on public cloud service providers if your team is happy with that solution. Jenkins must show test reports for the application. Only one member is required to setup Jenkins.</span></li><li><span>It is recommended to use an IDE like IntelliJ or Eclipse, whatever your group feels comfortable with, to assist you throughout the software development.</span></li></ol><p><span>The tool setup might become more challenging. So, it is crucial that every group members participate and practice all exercises in the tutorials (week 1 – week 5).</span></p><p><strong><span>Part 2 - Building Currency Application using the Agile Tools</span></strong></p><p><span>Each group will be required to develop a simple currency converter application in JAVA. All team members must collaboratively build this application using the agile tools they have setup in the previous part. All teams will have to implement following application requirements:</span></p><ol><li><p><span>There are two user types in the system: admin and normal user (or user). The admin user can use all the functions of the application as specified below. The normal user can use certain functions as specified below.</span></p></li><li><p><span>The application should allow normal users to convert money from one currency to another. The application should allow normal users to input money amount and choose its currency symbol and the desired currency they want to convert to. The application should then carry out the conversion and display it with the current currency symbol.</span></p></li><li><p><span>Only the admin user can maintain the currency types and its exchange rates. Initially, your application must start with 6 currencies and its exchange rats. Exchange rates must be loaded along with the date when the application first runs. This can be a simple in-memory database (e.g., file). You may find the exchange rates from online sources such as </span><a href='http://www.xe.com/'><span>XE (Links to an external site.)</span></a><span>.</span></p></li><li><p><span>The application should allow the normal user to display most popular currencies in a table of the currencies in which every cell represents the exchange rate between the currencies (as shown in table 1). Most popular currencies must be 4 currencies which are specified and updated by the admin user. For example, in the below table, the conversion rate from AUD to SGD is 0.99. Exchange rates must be the most up-to-date rates as specified in the currency rates file/database.</span></p><figure><table><thead><tr><th><strong><span>From/To</span></strong></th><th><strong><span>AUD</span></strong></th><th><strong><span>SGD</span></strong></th><th><strong><span>US</span></strong></th><th><strong><span>EU</span></strong></th></tr></thead><tbody><tr><td><strong><span>AUD</span></strong></td><td><strong><span>-</span></strong></td><td><strong><span>0.99 ↓</span></strong></td><td><span> </span></td><td><span> </span></td></tr><tr><td><strong><span>SGD</span></strong></td><td><strong><span>1.01 ↑</span></strong></td><td><strong><span>-</span></strong></td><td><span> </span></td><td><span> </span></td></tr><tr><td><strong><span>US</span></strong></td><td><span> </span></td><td><span> </span></td><td><strong><span>-</span></strong></td><td><span> </span></td></tr><tr><td><strong><span>EU</span></strong></td><td><span> </span></td><td><span> </span></td><td><span> </span></td><td><strong><span>-</span></strong></td></tr></tbody></table></figure><p><em><span>Table 1. Exchange rates of most popular 4 currencies</span></em></p></li><li><p><span>The admin user can do all the above operations as well, i.e., convert currencies and display the popular currencies table.</span></p></li><li><p><span>The admin user can add new exchange rates daily by entering the date and exchange rate for that date of all currencies stored in the file. A complete history of the change exchange rates must be persistent including the rate and its date of addition. For example, if AUD to SGD was 0.99 and was added on September 4, 2020 and the admin added another exchange rate (e.g., 0.97 on September 5, 2020), these rates must be persisted for the below functionalities.</span></p></li><li><p><span>The admin can also add new currency types in addition to the existing currencies and its conversion rates. The most up-to-date currencies should be used in currency conversion and in the most popular currencies table.</span></p></li><li><p><span>When the user select to display the 4 x 4 common currencies table, if the new rate has decreased as explained in (6), this must be indicated by a down arrow as shown in </span><em><span>table 1</span></em><span> (i.e. the rate of conversion from AUD to SGD has been decreased compared to previous rate, 0.99 to 0.97).</span></p></li><li><p><span>Given the history of the conversion rates (based on admin input), the user can print summary of the conversion rates of 2 currencies they choose within a specific duration (start and end dates). This includes all conversion rates, average, median, maximum, minimum and standard deviation of the conversion rate of the 2 currencies during the specified start and end date.</span></p></li><li><p><span>The application must implement a simple user interface to allow users to select from the different available functions (stated above) with clear instructions and messages to guide the user on what should be done, corrected in case of incorrect selection/input and what options available on current or other functions. The user interface </span><strong><span>can be</span></strong><span> a GUI (java swing, etc.) over command-line based menu and instruction/messages. You are encouraged to have GUI, but not forced to do so.</span></p></li><li><p><span>All the above functionality must produce correct output as a result of using the Agile development tools.</span></p></li><li><p><span>Wherever certain function behavior or requirement is not specified above, you as a team can decide on how to handle/implement such behaviour as far as that does not lead to any errors or produce inconsistent or wrong output.</span></p></li></ol><p><span>Each group must carry on the development of the Currency Application using all the tools they setup in part 1. Teams must demonstrate the proper use of these tools and practices to ensure efficient and effective development as well as delivery of correct application behavior. This includes:</span></p><ul><li><p><span>GitHub collaboration (branching, merging and conflict resolution). Make releases and version your software properly on GitHub.</span></p></li><li><p><span>Build automation triggers successfully with appropriate reporting</span></p></li><li><p><span>Automated tests trigger successfully with appropriate test/code coverage and reporting</span></p><ul><li><span>You must make sure your unit tests have a good code coverage. You must write unit test cases that result in more than 75% code coverage.</span></li><li><span>Tests must be such that it covers all edge cases and normal cases as well. Tests must be written for the functionality of the application (listed above).</span></li></ul></li></ul><p><span>Each group must also apply relevant continuous integration practices, covered in this course, in their application development.</span></p><p><span>All groups must show evidence (in their report and demo) of the proper use and application of the above-mentioned agile tools and development/CI practices.</span></p><p><span> </span></p><p><strong><span>Technical Report</span></strong><span>  </span></p><p><span>Each group must prepare a technical report that record evidence of the above development activities. This specifically includes:</span></p><ol><li><span>Explain how the group collaborated to complete the development of the Currency Application. This should include individual and group contributions, group communication (recorded minutes for all meetings). Each </span><em><span>individual team member</span></em><span> must explain how they contributed towards implementing the features of the application. </span></li><li><span>A README file </span><strong><span>or</span></strong><span> a page in the GitHub wiki explaining how to run the program, and how to test it. You may also include other instructions as to how to contribute/collaborate on the codebase.</span></li><li><span>GitHub collaboration. You must explain how GitHub was used for building the application. This might include Project boards, issues, pull requests etc. and how they were used in favor of completing the implementation of the application.</span></li><li><span>Explain how Gradle was used. This may include any extra tasks/dependencies used for the application including brief comments on how those extra tasks/dependencies helped you build the application.</span></li><li><span>Code coverage report for the final commit, including JUnit results for the commits. All Junit test cases that are written must be documented and explained (i.e. why the unit test was chosen and what does it test (regular input, edge cases etc). Document any tests that may have failed. You will also need to explain what the test coverage report is displaying.</span></li></ol><p><span> </span></p><p><strong><span>Project Demonstration</span></strong><span> </span></p><ul><li><span>Each group must demonstrate their project work. You will have to demo your group work and individual contributions to your tutor during week 7 tutorials.</span></li><li><span>Each group will have 15-20 minutes to demonstrate a summary of the currency application functionalities and work done through your GitHub repo, automated builds, automated test and Jenkins. </span></li><li><span>All team members must be present in the project demo. Also, every member must demo their individual contributions to the project besides the group work. Your tutor will ask you questions on the entire collaboration including tool setup and implementation. Every team member will be asked questions about the development work done by the team and by themselves.</span></li></ul><p><span>More details about the demos will be announced closer to the submission deadline.</span></p><p><span> </span></p><p><strong><span>Group Member Contribution</span></strong></p><p><span>If members of your group do not contribute sufficiently you should alert your tutor as soon as possible. The course instructor has the discretion to scale the group’s mark for each member as follows:</span></p><figure><table><thead><tr><th><strong><span>Level of Contribution</span></strong></th><th><strong><span>Proportion of final grade received</span></strong></th></tr></thead><tbody><tr><td><span>No contribution</span></td><td><span>0%</span></td></tr><tr><td><span>poor/partial contribution </span></td><td><span>1% - 49%</span></td></tr><tr><td><span>Partial/poor contribution</span></td><td><span>50%-99%</span></td></tr><tr><td><span>Full contribution</span></td><td><span>100%</span></td></tr></tbody></table></figure><p><span> </span></p><h3><a name="deliverable-and-submission-guideline" class="md-header-anchor"></a><strong><span>Deliverable and Submission Guideline</span></strong></h3><ul><li><span>Each team must submit their technical report as PDF (one submission per group) through the provided link this Canvas page. All group members must sign the </span><a href='https://canvas.sydney.edu.au/courses/25875/files/11631467/download?wrap=1'><span>assignment coversheet</span></a><a href='https://canvas.sydney.edu.au/courses/25875/files/11631467/download?wrap=1'><img src="https://canvas.sydney.edu.au/images/preview.png" referrerpolicy="no-referrer" alt="Preview the document"></a><span> and attach it as the first page of the technical report. (reports that does not include the signed assignment cover sheet will not be marked).</span></li><li><span>Each team must submit their latest source code version of the Currency Application as zip file with all your project files. A separate submission link will be supplied). </span></li></ul><h3><a name="marking-guide" class="md-header-anchor"></a><strong><span>Marking Guide</span></strong><span> </span></h3><p><span>The below marking criteria should help you to prepare and structure your group project report and demo besides the above assignment requirements. </span></p><ol><li><strong><span>Quality of Version Control of the Application Source Code (GitHub) (15%)</span></strong></li></ol><p><span>Clear and sensible explanation of the work carried out by the team (what, how and why). This should be demonstrated through the project report and the group demo. including: </span></p><ul><li><span>Collaboration model of GitHub repository (from GitHub organization). Every member must have contributed to the Currency application development through this repository. </span></li><li><span>GitHub setup and git  commands</span></li><li><span>Examples of representative of GitHub; e.g., merging, branching, and conflict resolutions</span></li><li><span>Examples  of the steps to deal with these issues in the previous point </span></li><li><span>How the group collaborated using GitHub to complete the project </span></li></ul><p><span>All the above must be supported by appropriate evidences where applicable (e.g., screenshots, outputs, logs). The GitHub organization will be audited during the demo and while marking the report to ensure consistency. </span></p><ol><li><strong><span>Quality of Build Automation (Gradle) (10%)</span></strong></li></ol><p><span>Clear and sensible explanation of the work carried out by the team (what, how and why) to automate the Currency Application build. This should be demonstrated through the project report and group demo including: </span></p><ul><li><span>Relevant Gradle commands used</span></li><li><span>Brief explanation of the build.gradle file </span></li><li><span>Explanation about the results/outputs obtained from relevant Gradle commands </span></li></ul><p><span>All the above must be supported by appropriate evidences where applicable (e.g., screenshots, outputs, logs). </span></p><p><span> </span></p><ol><li><strong><span>Quality of Testing (Junit) (20%)</span></strong></li></ol><p><span>Clear and sensible explanation of the work carried out by the team (what, how and why) to automate unit tests. This should be demonstrated through the project report and group demo including: </span></p><ul><li><span>How unit tests are run </span></li><li><span>How code (test) coverage is incorporated</span></li><li><span>JUnit test files describing test cases to test the program </span></li><li><span>How and why test cases were designed</span></li><li><span>Representative results/output from JUnit tests </span></li><li><span>Results/output from code/test coverage </span></li></ul><p><span>All the above must be supported by appropriate evidences where applicable (e.g., screenshots, outputs, logs)</span></p><p><span> </span></p><ol><li><strong><span>Quality of Continuous Integration (Jenkins) (25%)</span></strong></li></ol><p><span>Clear and sensible explanation of the work carried out by the team (what, how and why) to automate the CI pipeline. This should be demonstrated through the project report and group demo including: </span></p><ul><li><span>How Jenkins integrated with GitHub</span></li><li><span>Build and testing coverage on Jenkins </span></li><li><span>Jenkins setup including webhook, automatic build/test, Jacoco test report displayed on Jenkins, and Jenkins archived outputs (jar and test results) </span></li><li><span>Explanation of representative Jenkins outputs </span></li><li><span>Adopted CI practices</span></li></ul><p><span>All the above must be supported by appropriate evidences (e.g., screenshots, outputs, logs). </span></p><p><span> </span></p><ol><li><strong><span>Quality of Application Development (20%)</span></strong></li></ol><p><span>Clear and sensible explanation of the work carried out by the team (what, how and why) to implement the requirements of the Currency Application. This should be demonstrated through the project report and group demo including: </span></p><ul><li><span>Description about how the group collaborated to complete the application using the above tools set up, individual and group contributions, group communication (you can reference other sections/parts if already presented previously in your report)</span></li><li><span>Overview of the Currency Application design (e.g., class diagrams, sequence diagrams, or any format)</span></li><li><span>How the Currency application produces correct output/behaviour with various inputs and adheres to the functional requirements during the demo (recorded and the live Q&amp;A)</span></li></ul><p><span>All the above must be supported by appropriate evidences where applicable (e.g., screenshots, outputs, logs). </span></p><p><span> </span></p><ol><li><strong><span>Quality of Demonstration (10%)</span></strong></li></ol><ul><li><span>The demo correctly covers the key important scenarios listed above</span></li><li><span>The Currency application adheres to the functional requirements and produces correct output during the live Q&amp;A</span></li><li><span>The team is able to sensibly answer questions, explain and justify the work they’ve done in the project, and the results produced during the live Q&amp;A</span></li></ul><p><span> </span></p><ol><li><strong><span>Quality of individual contribution</span></strong></li></ol><ul><li><span>Each team member made fair and enough contribution to the setup of Agile tools and to the development of the Currency application. All members collaborated and worked as a team. This is clearly evident by the GitHub repository and provided evidences in each of the above development activities.</span></li><li><span>Each team member should clearly indicate their contribution in the report (table of roles and contributions and reference to the sections in the report)</span></li><li><span>The mark for each member will be scaled based on their contributions to the project as per the contribution percentages described in the assignment requirements (0%-100%)</span></li></ul><p><span> </span></p><h2><a name="academic-honesty" class="md-header-anchor"></a><span>Academic honesty</span></h2><p><span>While the University is aware that the vast majority of students and staff act ethically and honestly, it is opposed to and will not tolerate academic dishonesty or plagiarism and will treat all allegations of dishonesty seriously.</span></p><p><span>Further information on academic honesty, academic dishonesty, and the resources available to all students can be found on the academic integrity pages on the current students website: </span><a href='https://sydney.edu.au/students/academic-integrity.html' target='_blank' class='url'>https://sydney.edu.au/students/academic-integrity.html</a><span>.</span></p><p><span>Further information for on research integrity and ethics for postgraduate research students and students undertaking research-focussed coursework such as Honours and capstone research projects can be also be found on the current students website: </span><a href='https://sydney.edu.au/students/research-integrity-ethics.html' target='_blank' class='url'>https://sydney.edu.au/students/research-integrity-ethics.html</a><span>.</span></p><h3><a name="compliance-statement" class="md-header-anchor"></a><span>Compliance statement</span></h3><p><span>In submitting this work, I acknowledge I have understood the following:</span></p><ul><li><span>I have read and understood the University of Sydney&#39;s </span><a href='https://sydney.edu.au/policies/showdoc.aspx?recnum=PDOC2012/254&amp;RendNum=0'><span>Academic Honesty in Coursework Policy 2015</span></a><span>.</span></li><li><span>The work is substantially my own and where any parts of this work are not my own I have indicated this by acknowledging the source of those parts of the work and enclosed any quoted text in quotation marks.</span></li><li><span>The work has not previously been submitted in part or in full for assessment in another unit unless I have been given permission by my unit of study coordinator to do so.</span></li><li><span>The work will be submitted to similarity detection software (Turnitin) and a copy of the work will be retained in Turnitin&#39;s paper repository for future similarity checking. Note: work submitted by postgraduate research students for research purposes is not added to Turnitin&#39;s paper repository.</span></li><li><span>Engaging in plagiarism or academic dishonesty in coursework will, if detected, lead to the University commencing proceedings under the </span><a href='https://sydney.edu.au/policies/showdoc.aspx?recnum=PDOC2012/254&amp;RendNum=0'><span>Academic Honesty in Coursework Policy 2015</span></a><span> and the </span><a href='http://sydney.edu.au/policies/default.aspx?mode=glossary&amp;word=Academic+honesty'><span>Academic Honesty Procedures 2016</span></a><span>.</span></li><li><span>Engaging in plagiarism or academic dishonesty in research-focussed work will lead to the University commencing proceedings under the </span><a href='https://sydney.edu.au/policies/showdoc.aspx?recnum=PDOC2013/321&amp;RendNum=0'><span>Research Code of Conduct 2013</span></a><span> and the </span><a href='http://sydney.edu.au/policies/default.aspx?mode=glossary&amp;word=Academic+honesty'><span>Academic Honesty Procedures 2016</span></a><span>.</span></li><li><span>Engaging another person to complete part or all of the submitted work will, if detected, lead to the University commencing proceedings against me for potential student misconduct under the </span><a href='http://sydney.edu.au/policies/showdoc.aspx?recnum=PDOC2017/441&amp;RendNum=0'><span>University of Sydney (Student Discipline) Rule 2016</span></a><span>.</span></li></ul></div>
+</body>
+</html>

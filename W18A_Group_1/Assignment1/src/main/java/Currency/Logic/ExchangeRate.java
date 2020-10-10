@@ -1,28 +1,25 @@
-package Currency;
+package Currency.Logic;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;;
 
 public class ExchangeRate {
-    private Date date;
-    private double rate;
     // Name of first currency
     private String currencyA;
     // Name of second currency
     private String currencyB;
     // Map each rate to the date it's updated
-    Map<Date,Double> rateList;
+    private Map<Date,Double> rateList;
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
     // The format of exchange rate creation should follow:
     // 1. rate indicates 1 unit of A to x unit of B.
     // 2. date object should be Date(int year, int month, int date)
     public ExchangeRate(String currencyA, String currencyB, double rate, Date date){
-        rateList = new HashMap<>();
+        rateList = new HashMap<Date, Double>();
         this.currencyA = currencyA;
         this.currencyB = currencyB;
-        rateList = new HashMap<>();
         rateList.put(date,rate);
     }
 
@@ -54,6 +51,8 @@ public class ExchangeRate {
         return newestEntry;
         
     }
+    
+    
 
     public void getAllRate() {
         Set<Map.Entry<Date,Double>> exchangeRateEntrySet = rateList.entrySet();
@@ -65,18 +64,32 @@ public class ExchangeRate {
 
 
 
+    public void addNewRate(double rate, Date date){
+        rateList.put(date, rate);
+/*
+        Date lastUpdatedDate = this.getNewestRate().getKey();
+        double oldRate = this.getNewestRate().getValue();
+        Calendar myCalendar = new GregorianCalendar();
+        myCalendar.setTime(lastUpdatedDate);
 
-     public void addNewRate(double rate, Date date){
+        while (myCalendar.getTime().before(date)){
+            Date result = myCalendar.getTime();
+            rateList.putIfAbsent(result,oldRate);
+            myCalendar.add(Calendar.DATE, 1);
+        }
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Double result = rateList.putIfAbsent(date, rate);
         if (result!=null){
             System.out.printf("The rate %f has already been added\n",result);
             return;
         }
-         System.out.printf("CurrencyA: %s   CurrencyB: %s    Rate:%.2f    Date:%s\n",
-                 this.getCurrencyA(),this.getCurrencyB(),this.getNewestRate().getValue(),formatter.format(this.getNewestRate().getKey()));
+        System.out.printf("CurrencyA: %s   CurrencyB: %s    Rate:%.2f    Date:%s\n",
+                this.getCurrencyA(),this.getCurrencyB(),this.getNewestRate().getValue(),formatter.format(this.getNewestRate().getKey()));
         System.out.println("Exchange rate successfully added.");
-     }
+*/
+    }
+    
+    
 
     public boolean decreasedFromLastRate(){
         if(rateList.keySet().size() < 2){
@@ -96,6 +109,23 @@ public class ExchangeRate {
     }
 
 
+    public boolean increasedFromLastRate(){
+        if(rateList.keySet().size() < 2){
+            return false;
+        }
+        Map.Entry<Date, Double> newestEntry = getNewestRate();
+        Date newestDate = newestEntry.getKey();
+        Date lastDate = new Date(0L);
+
+        for(Date dt : rateList.keySet()){
+            if (dt.after(lastDate) && dt != newestEntry){
+                lastDate = dt;
+            }
+        }
+        return rateList.get(lastDate) < newestEntry.getValue() ;
+
+    }
+
 
     
     public List<Double> getHistoricalRates(Date start, Date finish){
@@ -114,6 +144,8 @@ public class ExchangeRate {
         return historicalRates;
         
     }
+
+
 
     // TODO: the following get methods will use the list returned from the above method
     public double getAverage(List<Double> historicalRates){
@@ -135,7 +167,6 @@ public class ExchangeRate {
 
 
 
-
     public double getMedian(List<Double> historicalRates){
         // check list whether is empty or null, default 0.0 which means not historicalRates
         if (historicalRates == null || historicalRates.size() == 0) {
@@ -147,7 +178,7 @@ public class ExchangeRate {
         }
         // make a new sorted list
         Collections.sort(historicalRates);
-        List<Double> sortedHistoricalRates = new ArrayList<>(historicalRates);
+        List<Double> sortedHistoricalRates = new ArrayList<Double>(historicalRates);
         int mid = sortedHistoricalRates.size() / 2;
 
         if (sortedHistoricalRates.size() % 2 == 0) {
@@ -157,7 +188,6 @@ public class ExchangeRate {
         }
 
     }
-
 
 
 
@@ -175,6 +205,8 @@ public class ExchangeRate {
         Collections.sort(sortedHistoricalRates);
         return sortedHistoricalRates.get(0);
     }
+    
+    
 
     public double getMax(List<Double> historicalRates){
         // check list whether is empty or null, default 0.0 which means not historicalRates
@@ -193,8 +225,7 @@ public class ExchangeRate {
     
     
 
-
-    public double getSD(List<Double> historicalRates){
+    public Double getSD(List<Double> historicalRates){
         // check list whether is empty or null, default 0.0 which means not historicalRates
         if (historicalRates == null || historicalRates.size() == 0) {
             return 0.0;
@@ -216,20 +247,41 @@ public class ExchangeRate {
         double result = Math.sqrt( sum / (historicalRates.size()-1) );
         return (double) Math.round(result * 100)/100;
     }
+    
+    
+    
+    public Double getMaxRecordInThePeriod(Date start, Date end){
+        return getMax(getHistoricalRates(start, end));
+    }
 
+
+
+    public Double getMinRecordInThePeriod(Date start, Date end){
+        return getMin(getHistoricalRates(start, end));
+    }
+    
+    
+    
+    public Double getGlobalReocordMax(){
+        return getMaxRecordInThePeriod( new Date(0), new Date());
+    }
+    
+    
+    
+    public Double getGlobalReocordMin(){
+        return getMinRecordInThePeriod( new Date(0), new Date());
+    }
 
 
 
     @Override
-    public boolean equals(Object anotherExchangeRate) {
-        if (this == anotherExchangeRate) { // <-- reference identity test.
-            return true;
-        }
-        if (anotherExchangeRate instanceof ExchangeRate) {
-            ExchangeRate x = (ExchangeRate) anotherExchangeRate;
-            return ((this.getCurrencyA().equals(x.getCurrencyA()) && this.getCurrencyB().equals(x.getCurrencyB())));
-//                    (this.getCurrencyA().equals(x.getCurrencyA()) && this.getCurrencyB().equals(x.getCurrencyB())));
-        }
-        return false;
+    public String toString(){
+        Double rate = getNewestRate().getValue();
+        boolean desc = this.decreasedFromLastRate();
+        boolean asc = this.increasedFromLastRate();
+        if(!asc && !desc){
+            return rate + "=";
+        } 
+        return rate + ((desc) ? "↓" : "↑"); 
     }
 }

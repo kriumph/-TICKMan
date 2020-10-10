@@ -1,4 +1,4 @@
-package Currency;
+package Currency.Logic;
 
 import java.util.Date;
 

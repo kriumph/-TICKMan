@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="482.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Currency.UI.Controller">
+   <children>
+      <AnchorPane prefHeight="492.0" prefWidth="780.0" visible="false" />
+      <Pane fx:id="LoginPage" prefHeight="492.0" prefWidth="780.0" visible="false">
+         <children>
+            <Button layoutX="259.0" layoutY="200.0" mnemonicParsing="false" onAction="#ToAdminPage" text="Admin" />
+            <Button layoutX="459.0" layoutY="200.0" mnemonicParsing="false" onAction="#ToUserPage" text="User" />
+         </children>
+      </Pane>
+      <Pane fx:id="AdminPage" prefHeight="492.0" prefWidth="780.0">
+         <children>
+            <AnchorPane prefHeight="484.0" prefWidth="339.0">
+               <children>
+                  <Pane fx:id="pane_Convert" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0">
+                     <children>
+                        <TextField fx:id="FromTextBoxInConvert" layoutX="100.0" layoutY="120.0" promptText="From" />
+                        <ChoiceBox fx:id="ChoiceBox1" layoutX="290.0" layoutY="120.0" prefWidth="50.0">
+                        </ChoiceBox>
+                        <TextField fx:id="ToTextBoxInConvert" layoutX="100.0" layoutY="200.0" promptText="To" />
+                        <ChoiceBox fx:id="ChoiceBox2" layoutX="290.0" layoutY="200.0" prefWidth="50.0">
+                        </ChoiceBox>
+                        <Button layoutX="372.0" layoutY="163.0" mnemonicParsing="false" onAction="#ConfirmInConvert" text="Confirm" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane_Trending" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <GridPane fx:id="TrendingTable" layoutX="30.0" layoutY="50.0" prefHeight="363.0" prefWidth="450.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="SGD" GridPane.rowIndex="1" />
+                              <Label text="CNY" GridPane.rowIndex="2" />
+                              <Label text="USD" GridPane.rowIndex="3" />
+                              <Label text="AUD" GridPane.rowIndex="4" />
+                              <Label text="SGD" GridPane.columnIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="1.1 ↓" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="CNY" GridPane.columnIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="0.38↑" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="USD" GridPane.columnIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label text="AUD" GridPane.columnIndex="4" />
+                              <Label text="3.2 -" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label text="0.9" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="65.0" layoutY="23.0" mnemonicParsing="false" onAction="#test" text="Button" />
+                     </children></Pane>
+                  <Pane fx:id="pane_Query" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Update" text="Button" />
+                        <DatePicker layoutX="60.0" layoutY="115.0" promptText="Date from" />
+                        <DatePicker layoutX="310.0" layoutY="115.0" promptText="Date to" />
+                        <ChoiceBox layoutX="65.0" layoutY="80.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <ChoiceBox layoutX="310.0" layoutY="80.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <TableView fx:id="RatesTable" cache="true" editable="true" layoutX="115.0" layoutY="214.0" prefHeight="206.0" prefWidth="376.0">
+                           <columns>
+                              <TableColumn fx:id="DateColumn" prefWidth="182.0" text="Date" />
+                              <TableColumn fx:id="RateColumn" prefWidth="193.0" text="Rate" />
+                           </columns></TableView>
+                     </children></Pane>
+                  <Pane fx:id="pane_Currency" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Button layoutX="120.0" layoutY="180.0" mnemonicParsing="false" onAction="#ToAddNewPage" prefHeight="46.0" prefWidth="139.0" text="Add New" />
+                        <Button layoutX="340.0" layoutY="180.0" mnemonicParsing="false" onAction="#ToTrending" prefHeight="46.0" prefWidth="139.0" text="Manage Existed" />
+                     </children></Pane>
+                  <Pane fx:id="pane_AddNew" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Button layoutX="427.0" layoutY="439.0" mnemonicParsing="false" onAction="#ToCurrencyPage" prefHeight="27.0" prefWidth="60.0" text="Back" />
+                        <Label layoutX="150.0" layoutY="100.0" text="Name" />
+                        <Label layoutX="150.0" layoutY="153.0" text="Symbol" />
+                        <TextField layoutX="213.0" layoutY="95.0" />
+                        <TextField layoutX="213.0" layoutY="148.0" />
+                        <Button layoutX="281.0" layoutY="439.0" mnemonicParsing="false" text="Cancel" />
+                        <Button layoutX="120.0" layoutY="439.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text="Add" />
+                     </children></Pane>
+                  <Pane fx:id="pane_ManageExisted_Trending" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Label layoutX="100.0" layoutY="30.0" text="Trending List" />
+                        <Button layoutX="427.0" layoutY="439.0" mnemonicParsing="false" onAction="#ToCurrencyPage" prefHeight="27.0" prefWidth="98.0" text="Back" />
+                        <Button layoutX="151.0" layoutY="439.0" mnemonicParsing="false" onAction="#ToManageRate" text="Manage Rate" />
+                        <ChoiceBox layoutX="318.0" layoutY="124.0" prefHeight="17.0" prefWidth="118.0" />
+                        <Label layoutX="203.0" layoutY="129.0" text="Trending#1" />
+                        <Label layoutX="203.0" layoutY="162.0" text="Trending#1" />
+                        <Label layoutX="203.0" layoutY="195.0" text="Trending#1" />
+                        <Label layoutX="203.0" layoutY="228.0" text="Trending#1" />
+                        <ChoiceBox layoutX="318.0" layoutY="157.0" prefHeight="17.0" prefWidth="118.0" />
+                        <ChoiceBox layoutX="318.0" layoutY="190.0" prefHeight="17.0" prefWidth="118.0" />
+                        <ChoiceBox layoutX="318.0" layoutY="223.0" prefHeight="17.0" prefWidth="118.0" />
+                     </children></Pane>
+                  <Pane fx:id="pane_ManageExisted_Rate" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Button layoutX="92.0" layoutY="438.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" text="Update" />
+                        <Button layoutX="431.0" layoutY="438.0" mnemonicParsing="false" onAction="#ToTrending" prefHeight="27.0" prefWidth="98.0" text="Back" />
+                        <Button layoutX="263.0" layoutY="438.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="98.0" text="Cancel" />
+                        <ChoiceBox layoutX="92.0" layoutY="135.0" prefWidth="150.0" />
+                        <ChoiceBox layoutX="312.0" layoutY="135.0" prefWidth="150.0" />
+                        <Label layoutX="150.0" layoutY="108.0" text="From" />
+                        <Label layoutX="378.0" layoutY="108.0" text="To" />
+                        <TextField layoutX="220.0" layoutY="212.0" />
+                        <TextField layoutX="220.0" layoutY="258.0" />
+                        <Button layoutX="500.0" layoutY="135.0" mnemonicParsing="false" text="Confirm" />
+                        <Label layoutX="133.0" layoutY="217.0" text="A -&gt; B" />
+                        <Label layoutX="133.0" layoutY="263.0" text="B -&gt; A" />
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="495.0" prefWidth="200.0" style="-fx-background-color: #1ee0e3#1ee0e3;">
+               <children>
+                  <VBox layoutX="25.0" layoutY="83.0" prefHeight="407.0" prefWidth="153.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#ConvertButtonClick" prefHeight="57.0" prefWidth="153.0" text="Convert">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="29.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-currency-exchange-100.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#TrendingButtonClick" prefHeight="57.0" prefWidth="153.0" text="Trending">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="27.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-fire-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#QueryButtonClick" prefHeight="57.0" prefWidth="153.0" text="Query">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-search-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#CurrencyButtonClick" prefHeight="57.0" prefWidth="153.0" text="Currency">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="29.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-us-dollar-100.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#ToLoginPage" prefHeight="57.0" prefWidth="153.0" text="Logout">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-shutdown-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" layoutX="23.0" layoutY="19.0" prefHeight="59.0" prefWidth="164.0" text="Profile" textAlignment="CENTER" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <Pane fx:id="UserPage" prefHeight="492.0" prefWidth="780.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="484.0" prefWidth="339.0">
+               <children>
+                  <Pane fx:id="pane_Convert_User" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <TextField layoutX="100.0" layoutY="120.0" promptText="From" />
+                        <ChoiceBox layoutX="290.0" layoutY="120.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <TextField layoutX="100.0" layoutY="200.0" promptText="To" />
+                        <ChoiceBox layoutX="290.0" layoutY="200.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane_Trending_User" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <GridPane fx:id="TrendingTableUser" layoutX="30.0" layoutY="50.0" prefHeight="363.0" prefWidth="450.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="SGD" GridPane.rowIndex="1" />
+                              <Label text="CNY" GridPane.rowIndex="2" />
+                              <Label text="USD" GridPane.rowIndex="3" />
+                              <Label text="AUD" GridPane.rowIndex="4" />
+                              <Label text="SGD" GridPane.columnIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="1.1 ↓" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="CNY" GridPane.columnIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="0.38↑" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="USD" GridPane.columnIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <Label text="AUD" GridPane.columnIndex="4" />
+                              <Label text="3.2 -" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label text="0.9" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <Label text="1.1" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label text="1.1" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <Button layoutX="65.0" layoutY="23.0" mnemonicParsing="false" onAction="#test" text="Button" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane_Query_User" layoutX="181.0" layoutY="2.0" prefHeight="493.0" prefWidth="592.0" visible="false">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Update" text="Button" />
+                        <DatePicker layoutX="60.0" layoutY="115.0" promptText="Date from" />
+                        <DatePicker layoutX="310.0" layoutY="115.0" promptText="Date to" />
+                        <ChoiceBox layoutX="65.0" layoutY="80.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <ChoiceBox layoutX="310.0" layoutY="80.0" prefWidth="50.0">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="SGD" />
+                                 <String fx:value="CNY" />
+                                 <String fx:value="USD" />
+                                 <String fx:value="AUD" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <TableView fx:id="RatesTable1" cache="true" editable="true" layoutX="115.0" layoutY="214.0" prefHeight="206.0" prefWidth="376.0">
+                           <columns>
+                              <TableColumn fx:id="DateColumn1" prefWidth="182.0" text="Date" />
+                              <TableColumn fx:id="RateColumn1" prefWidth="193.0" text="Rate" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="495.0" prefWidth="200.0" style="-fx-background-color: #1ee0e3#1ee0e3;">
+               <children>
+                  <VBox layoutX="25.0" layoutY="83.0" prefHeight="407.0" prefWidth="153.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#ConvertButtonClickUser" prefHeight="57.0" prefWidth="153.0" text="Convert">
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="29.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-currency-exchange-100.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#TrendingButtonClickUser" prefHeight="57.0" prefWidth="153.0" text="Trending">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="27.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-fire-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#QueryButtonClickUser" prefHeight="57.0" prefWidth="153.0" text="Query">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-search-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#ToLoginPage" prefHeight="57.0" prefWidth="153.0" text="Logout">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../../../Downloads/icons8-shutdown-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label alignment="CENTER" layoutX="23.0" layoutY="19.0" prefHeight="59.0" prefWidth="164.0" text="Profile" textAlignment="CENTER" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

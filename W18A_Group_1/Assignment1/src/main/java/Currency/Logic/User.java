@@ -1,4 +1,4 @@
-package Currency;
+package Currency.Logic;
 
 import java.util.ArrayList;
 
@@ -18,8 +18,8 @@ public class User implements UserFeatures{
     public ArrayList<String> getPopularCurrencies() {return admin.PopularCurrencies;}
 
     @Override
-    public void getPopularRates(){
-        ArrayList<Double> PopularRates = new ArrayList<Double>();
+    public ArrayList<ExchangeRate> getPopularRates(){
+        ArrayList<ExchangeRate> PopularRates = new ArrayList<ExchangeRate>();
         ArrayList<String> PopularCurrencies = this.getPopularCurrencies();
         //Name of our popular currencies
         String popularCurrencyA = PopularCurrencies.get(0);
@@ -33,42 +33,44 @@ public class User implements UserFeatures{
         //D-A, D-B, D-C
         for(ExchangeRate er : cc.exchangeRateList){
             if(er.getCurrencyA().equals(popularCurrencyA) && er.getCurrencyB().equals(popularCurrencyB)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyA) && er.getCurrencyB().equals(popularCurrencyC)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyA) && er.getCurrencyB().equals(popularCurrencyD)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyB) && er.getCurrencyB().equals(popularCurrencyA)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyB) && er.getCurrencyB().equals(popularCurrencyC)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyB) && er.getCurrencyB().equals(popularCurrencyD)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyC) && er.getCurrencyB().equals(popularCurrencyA)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyC) && er.getCurrencyB().equals(popularCurrencyB)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyC) && er.getCurrencyB().equals(popularCurrencyD)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyD) && er.getCurrencyB().equals(popularCurrencyA)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyD) && er.getCurrencyB().equals(popularCurrencyB)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
             else if(er.getCurrencyA().equals(popularCurrencyD) && er.getCurrencyB().equals(popularCurrencyC)){
-                PopularRates.add(er.getNewestRate().getValue());
+                PopularRates.add(er);
             }
         }
+        return PopularRates;
     }
+
 }
 

@@ -1,4 +1,4 @@
-package Currency;
+package Currency.Logic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +7,8 @@ import java.util.*;
 
 public class CurrencyConverter {
 
-    List<ExchangeRate> exchangeRateList;
+    ArrayList<String> currencyList = new ArrayList<>();
+    public List<ExchangeRate> exchangeRateList = new ArrayList<>();
     Map<String,Integer> currencyCoordinates;
     Date creationDate = new Date(120,9,7);
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -56,9 +57,8 @@ public class CurrencyConverter {
     }
 
     public double getRate(String A, String B){
-        ExchangeRate er = new ExchangeRate(A,B,0,new Date());
         for (ExchangeRate exRate : exchangeRateList){
-            if (er.equals(exRate)){
+            if (A.equals(exRate.getCurrencyA()) && B.equals(exRate.getCurrencyB())){
                 return exRate.getNewestRate().getValue();
             }
         }
@@ -101,11 +101,17 @@ public class CurrencyConverter {
     // TODO: get the corresponding index based on currency
     public int getCurrencyIndex(String currency){return currencyCoordinates.get(currency);}
 
+    public ArrayList<String> getAllCurrency(){
+        for(String keyCurrency: this.currencyCoordinates.keySet()){
+            currencyList.add(keyCurrency);
+        }
+        return this.currencyList;
+    }
+
     public CurrencyConverter(String filepath){
         currencyCoordinates = new HashMap<>();
         exchangeRateList = new ArrayList<>();
-
-        readERFromFile(filepath);
+        this.readERFromFile(filepath);
 //        displayExchangeRate();
     }
 }
