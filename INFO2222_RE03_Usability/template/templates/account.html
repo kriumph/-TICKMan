@@ -1,0 +1,135 @@
+<div style="display:inline-block; width:1800px">
+
+    <div class="account-item" style="display:inline-block">
+        <div class="button"><a class="button-font">Details</a></div>        
+        <div class="button"><a class="button-font">Safety</a></div>        
+        <div class="button"><a class="button-font">Setting</a></div> 
+        <div class="button"><a class="button-font">Logout</a></div>
+    </div>
+
+    <div class="line"></div>
+
+    <div style="display:inline-block; width:1200px; margin-left:80px; vertical-align:top; margin-top:40px">
+
+        <div class="details-content" style="display:inline-block">
+            <div style="display:inline-block; margin-left: 120px">
+                <img src="https://ftp.bmp.ovh/imgs/2021/04/7e1c88754382dc13.png" height="200px" width="400px"></img><br>
+                <button style="margin-left:125px">Upload Profile Picture</button>
+            </div>
+            <div style="display:inline-block; margin-left: 150px;font-size:20px; font-family:'Times New Roman', Times, serif;
+            font-weight: 900;">
+                <p>Name: XXXXXX </p> 
+                <p>Email: XXXXXX</p> 
+                <p>Gender: Male</p> 
+                <p>Bio: XXXXXX</p> 
+                <p>Contact: XXXXXX</p> 
+            </div>
+            <div style="margin-left:500px; font-size:40px; font-family:'Times New Roman', Times, serif;
+            font-weight:bold; margin-top:50px">
+                <p>Moments</p> 
+            </div> 
+        </div>
+ 
+        <div class="safety-content" style="display:none">
+            <div style="margin-left: 200px; font-size:60px; font-family:'Times New Roman', Times, serif;
+            font-weight:bold">Safety</div>    
+            <div style="margin-left: 200px; font-size:40px; font-family:'Times New Roman', Times, serif;
+            font-weight:bold">
+                <div>
+                    <p>Reset Password</p> 
+                    <div style="font-size: 20px; font-weight:initial; margin-top:-35px">
+                        <p style="display:inline-block">Original Password:</p>&nbsp;&nbsp;<input style="display:inline-block"><br>
+                        <p style="display:inline-block; margin-top: -20px">New Password:</p>&nbsp;&nbsp;<input style="display:inline-block"> <br>
+                        <button>Confirm</button> 
+                    </div>
+                </div>   
+                <div>
+                    <p>Reset Safety Q&A</p>
+                    <div style="font-size: 20px; font-weight:initial; margin-top:-35px">
+                        <p style="display:inline-block">New Safety Question:</p>&nbsp;&nbsp;<input style="display:inline-block"><br>
+                        <p style="display:inline-block; margin-top: -20px">New Safety Answer:</p>&nbsp;&nbsp;<input style="display:inline-block"><br>
+                        <button>Confirm</button>  
+                    </div>
+                </div>  
+            </div> 
+        </div>
+
+        <div class="setting-content" style="display:none">
+            <div style="margin-left: 200px; font-size:60px; font-family:'Times New Roman', Times, serif;
+            font-weight:bold">Setting</div>   
+            <div style="margin-left: 200px; font-size:40px; font-family:'Times New Roman', Times, serif;
+            font-weight:bold">
+                <div>
+                    <p style="display: inline-block;">Language Setting:</p>
+                    <select style="display: inline-block; height:30px; vertical-align: middle;">
+                        <option value="Chinese">Chinese</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>   
+                <div>
+                    <p style="display: inline-block;">Font Size:</p>
+                    <select style="display: inline-block; height:30px; vertical-align: middle;">
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </div>   
+            </div> 
+        </div>
+        
+    </div>
+</div>
+
+<style>
+
+    .account-item{
+        height:300px;
+        width:80px;
+    }
+
+    .button{
+        line-height: 80px;
+        margin-top: 60px;
+        margin-left: 60px;
+    }
+
+    .button-font{
+        font-size: 50px;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: 900;
+    }
+
+    .line{
+ 	background:#ABD7DC;
+	width:1px;
+	height:800px;
+	position:relative;
+	left:300px;
+	float:left;
+    }
+
+</style>
+
+<script>
+    $(".button-font").on("click", function(){
+
+       if($(this).html()=="Details"){
+            $(".details-content").css("display","inline-block")
+            $(".safety-content").css("display","none")
+            $(".setting-content").css("display","none")
+       }
+
+       else if($(this).html()=="Safety"){
+            $(".details-content").css("display","none")
+            $(".safety-content").css("display","inline-block")
+            $(".setting-content").css("display","none")
+       }
+
+       else if($(this).html()=="Setting"){
+            $(".details-content").css("display","none")
+            $(".safety-content").css("display","none")
+            $(".setting-content").css("display","inline-block")
+       }
+       
+    })
+</script>

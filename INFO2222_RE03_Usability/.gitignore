@@ -1,0 +1,5 @@
+
+*.DS_Store
+w4school.db
+*.pyc
+*.db
